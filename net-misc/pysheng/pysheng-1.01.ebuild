@@ -6,7 +6,7 @@ inherit distutils-r1 python-utils-r1
 
 DESCRIPTION="Download books from Google Books as PNG images. It can be run either from the command-line or using a simple GUI (graphical interface)"
 HOMEPAGE="https://github.com/pysheng/pysheng"
-SRC_URI="https://github.com/RomaniukVadim/pysheng/releases/download/v1.0/${PN}_v${PVR}.tar.gz"
+SRC_URI="https://github.com/RomaniukVadim/pysheng/releases/download/v${PVR}/${PN}_v${PVR}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
