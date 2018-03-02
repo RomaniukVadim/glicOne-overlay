@@ -15,6 +15,7 @@ IUSE="python_targets_python2_7 python"
 S=${WORKDIR}/${PN}
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}"
+RESTRICT="mirror"
 
 src_install() {
 	      default

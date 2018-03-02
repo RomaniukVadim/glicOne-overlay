@@ -13,6 +13,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 IUSE="python_targets_python2_7 python"
 DEPEND="dev-python/beautifulsoup"
 RDEPEND="${DEPEND}"
+RESTRICT="mirror"
 
 src_install(){
 	      dobin Binaries/Linux/LFI

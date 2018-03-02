@@ -10,7 +10,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 IUSE=""
-DEPEND="dev-python/eyeD3 net-misc/curl"
+DEPEND="dev-python/eyeD3
+	 net-misc/curl
+	sys-apps/grep
+	sys-apps/sed"
 RESTRICT="mirror"
 RDEPEND="${DEPEND}"
 
