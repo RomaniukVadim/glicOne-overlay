@@ -16,9 +16,14 @@ RDEPEND="${DEPEND}"
 
 src_install() {
 	   dobin scdl
+	   dodoc .scdl.cfg
 	   cp .scdl.cfg $HOME/
 }
 
 pkg_postinst() {
+	elog "A sample configuration can be found in"
+	elog ""
+	elog "  /usr/share/doc/${PF}/.scdl.cfg"
+	elog ""
 	elog "Don't forget to add your own Music path and clientID in $HOME/.scdl.cfg."
 }
