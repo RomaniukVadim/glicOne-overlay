@@ -28,5 +28,6 @@ pkg_postinst() {
 	elog ""
 	elog "  /usr/share/doc/${PF}/.scdl.cfg"
 	elog ""
-	elog "Don't forget to add your own Music path and clientID in $HOME/.scdl.cfg."
+	elog "Don't forget to add your own Music path" 
+	elog "and clientID in ~/.scdl.cfg."
 }
