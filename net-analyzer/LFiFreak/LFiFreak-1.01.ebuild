@@ -5,7 +5,7 @@ PYTHON_COMPAT=(python2_7)
 
 DESCRIPTION="A unique tool for exploiting local file inclusions using PHP Input, PHP Filter and Data URI methods."
 HOMEPAGE="https://github.com/OsandaMalith/LFiFreak"
-SRC_URI="https://github.com/RomaniukVadim/LFiFreak/archive/${PVR}.tar.gz"
+SRC_URI="https://github.com/RomaniukVadim/${PN}/archive/${PVR}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
