@@ -78,12 +78,10 @@ src_install() {
 	# library that differ from system version
 	doins "${MY_PN}"/libprotobuf.so*
 	# android library
-	doins 
-"${MY_PN}"/{libEGL_translator,libGLES_CM_translator,libGLES_V2_translator,libOpenglRender,libemugl_logger}.so*
+	doins "${MY_PN}"/{libEGL_translator,libGLES_CM_translator,libGLES_V2_translator,libOpenglRender,libemugl_logger}.so*
 
 	insopts -m0755
-	doins 
-"${MY_PN}"/{device-upgrade,genymotion,genyshell,player,genymotionadbtunneld,gmtool}
+	doins "${MY_PN}"/{device-upgrade,genymotion,genyshell,player,genymotionadbtunneld,gmtool}
 
 	pax-mark -m "${ED%/}/opt/${MY_PN}/${MY_PN}"
 	pax-mark -m "${ED%/}/opt/${MY_PN}/gmtool"
@@ -93,10 +91,8 @@ src_install() {
 	dosym "${ED%/}"/opt/"${MY_PN}"/gmtool /opt/bin/gmtool
 
 	# Workaround
-	dosym "${ED%/}/"usr/$(get_libdir)/qt5/plugins/imageformats/libqsvg.so 
-/opt/"${MY_PN}"/imageformats/libqsvg.so
-	dosym "${ED%/}/"usr/$(get_libdir)/qt5/plugins/sqldrivers/libqsqlite.so 
-/opt/"${MY_PN}"/sqldrivers/libqsqlite.so
+	dosym "${ED%/}/"usr/$(get_libdir)/qt5/plugins/imageformats/libqsvg.so /opt/"${MY_PN}"/imageformats/libqsvg.so
+	dosym "${ED%/}/"usr/$(get_libdir)/qt5/plugins/sqldrivers/libqsqlite.so /opt/"${MY_PN}"/sqldrivers/libqsqlite.so
 
 	newbashcomp "${MY_PN}/completion/bash/gmtool.bash" gmtool
 
@@ -105,19 +101,15 @@ src_install() {
 		doins "${MY_PN}/completion/zsh/_gmtool"
 	fi
 
-	make_desktop_entry "/opt/${MY_PN}/${MY_PN}" "Genymotion ${PV}" 
-"/opt/${MY_PN}/icons/icon.png" "Development;Emulator;"
-	mv "${ED%/}"/usr/share/applications/*.desktop 
-"${ED%/}"/usr/share/applications/"${MY_PN}".desktop || die "mv failed"
+	make_desktop_entry "/opt/${MY_PN}/${MY_PN}" "Genymotion ${PV}" "/opt/${MY_PN}/icons/icon.png" "Development;Emulator;"
+	mv "${ED%/}"/usr/share/applications/*.desktop "${ED%/}"/usr/share/applications/"${MY_PN}".desktop || die "mv failed"
 }
 
 pkg_postinst() {
-	elog "Genymotion needs adb to work correctly: install with 
-android-sdk-update-manager"
+	elog "Genymotion needs adb to work correctly: install with android-sdk-update-manager"
 	elog "'Android SDK Platform-tools' and 'Android SDK Tools'"
 	elog "Your user should also be in the android group to work correctly"
-	elog "Then in Genymotion set the android-sdk-update-manager directory: 
-(Settings->ADB)"
+	elog "Then in Genymotion set the android-sdk-update-manager directory: (Settings->ADB)"
 	elog
 	elog "      /opt/android-sdk-update-manager"
 }
