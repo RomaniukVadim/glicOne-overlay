@@ -9,6 +9,12 @@ HOMEPAGE="http://keras.io/"
 LICENSE="MIT"
 SRC_URI="https://github.com/keras-team/${PN}/archive/${PV}.tar.gz"
 SLOT="0"
-IUSE="python"
+IUSE="+python cudnn hdf5 hdf5 h5py graphviz"
 RESTRICT="mirror"
 RDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
+DEPEND="${RDEPEND}
+		python? ( dev-lang/python )	
+		cudnn? ( dev-libs/cudnn )
+		hdf5? ( sci-libs/hdf5 )
+		h5py? ( dev-python/h5py )
+		graphviz? ( dev-python/graphviz )"
