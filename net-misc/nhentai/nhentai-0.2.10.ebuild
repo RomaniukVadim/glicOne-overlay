@@ -17,7 +17,7 @@ DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 	>=dev-python/future-0.15.2[${PYTHON_USEDEP}]
         >=dev-python/requests-2.5.0[${PYTHON_USEDEP}]
         >=dev-python/tabulate-0.7.5[${PYTHON_USEDEP}]
-	>=dev-python/threadpool-1.2.7[${PYTHON_USEDEP}]	
+	>=dev-python/threadpool-1.2.7[${PYTHON_USEDEP}]
         "
 RDEPEND="${DEPEND}"
 RESTRICT="mirror"
