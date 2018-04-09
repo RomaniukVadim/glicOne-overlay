@@ -12,13 +12,25 @@ SLOT="0"
 IUSE="python"
 KEYWORDS="~amd64"
 RESTRICT="mirror"
-RDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
+DEPEND="dev-python/termcolor
+	dev-python/docopt
+	media-libs/mutagen
+	dev-python/requests
+	dev-python/clint
+	"
+RDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
+${DEPEND}"
 S="${WORKDIR}/${P}"
 
-
-src_install() {
-	   default
-	   dodoc config/scdl.cfg
+python_compile(){
+        esetup.py build
+}
+python_install_all() {
+        distutils-r1_python_install_all
+}
+python_install(){
+        esetup.py install
+        dobin "${D}"usr/lib/python-exec/python3.5/scdl
 }
 
 pkg_postinst() {
