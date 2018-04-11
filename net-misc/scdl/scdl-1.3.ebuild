@@ -18,6 +18,8 @@ DEPEND="dev-python/termcolor
 	dev-python/requests
 	dev-python/clint
 	"
+# pip3 install wget soundcloud
+
 RDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 ${DEPEND}"
 S="${WORKDIR}/${P}"
@@ -32,6 +34,7 @@ python_install(){
         esetup.py install
         dobin "${D}"usr/lib/python-exec/python3.5/scdl
 }
+
 
 pkg_postinst() {
 	elog "A sample configuration can be found in"
